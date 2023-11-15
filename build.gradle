@@ -2,6 +2,11 @@ createDockerContainer {
 	hostConfig.network = "host"
 }
 
-allprojects {
-    apply plugin: "org.sonarqube"
+apply plugin: "org.sonarqube"
+
+sonar {
+    properties {
+        property "sonar.projectKey", "client-extensions-deep-dive-devcon-2023"
+        property 'sonar.java.source', 11
+    }
 }
