@@ -2,7 +2,7 @@ createDockerContainer {
 	hostConfig.network = "host"
 }
 
-subprojects {
+allprojects {
     apply plugin: "org.sonarqube"
 }
 
