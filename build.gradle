@@ -5,10 +5,3 @@ createDockerContainer {
 allprojects {
     apply plugin: "org.sonarqube"
 }
-
-sonar {
-    properties {
-        property "sonar.projectName", "Client Extenions Deep Dive DevCon 2023"
-        property "sonar.projectKey", "client-extensions-deep-dive-devcon-2023"
-    }
-}
