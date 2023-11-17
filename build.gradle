@@ -6,7 +6,7 @@ apply plugin: "org.sonarqube"
 
 sonar {
     properties {
-        property "sonar.projectKey", "client-extensions-deep-dive-devcon-2023"
+        property "sonar.projectKey", "client-extensions"
         property 'sonar.java.source', 11
     }
 }
