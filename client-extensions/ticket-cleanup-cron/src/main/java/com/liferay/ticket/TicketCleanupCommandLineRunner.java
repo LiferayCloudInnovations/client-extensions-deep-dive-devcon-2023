@@ -98,6 +98,12 @@ public class TicketCleanupCommandLineRunner implements CommandLineRunner {
 			TicketsResponse.class
 		).block();
 
+		if (ticketsResponse == null) {
+			_log.error("Unable to get tickets response.");
+
+			return;
+		}
+
 		if (_log.isInfoEnabled()) {
 			_log.info("Amount of tickets: " + ticketsResponse.items.length);
 		}
