@@ -51,6 +51,8 @@ public class TicketCleanupCommandLineRunner implements CommandLineRunner {
 					"TicketCleanupCommandLineRunner"
 				).build());
 
+		_log.info(oAuth2AuthorizedClient.getPrincipalName());
+		
 		if (oAuth2AuthorizedClient == null) {
 			_log.error("Unable to get OAuth 2 authorized client");
 
