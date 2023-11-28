@@ -17,7 +17,7 @@ pipeline {
         stage('Scan') {
             environment {
                 GITHUB_CREDS = credentials('jenkins-github-credentials')
-                DEFAULT_BRANCH = "${GIT_DEFAULT_BRANCH}"
+                DEFAULT_BRANCH = "main"
             }
             steps {
                 sh 'git fetch --no-tags --force --progress --prune -- https://${GITHUB_CREDS_USR}:${GITHUB_CREDS_PSW}@github.com/LiferayCloudInnovations/client-extensions-deep-dive-devcon-2023.git +refs/heads/${DEFAULT_BRANCH}:refs/remotes/origin/${DEFAULT_BRANCH}'
