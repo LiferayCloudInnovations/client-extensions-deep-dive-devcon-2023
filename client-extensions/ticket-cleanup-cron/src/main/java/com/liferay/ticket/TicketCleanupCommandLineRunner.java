@@ -51,6 +51,8 @@ public class TicketCleanupCommandLineRunner implements CommandLineRunner {
 					"TicketCleanupCommandLineRunner"
 				).build());
 
+		_log.info(oAuth2AuthorizedClient.getPrincipalName());
+		
 		if (oAuth2AuthorizedClient == null) {
 			_log.error("Unable to get OAuth 2 authorized client");
 
@@ -97,6 +99,12 @@ public class TicketCleanupCommandLineRunner implements CommandLineRunner {
 		).bodyToMono(
 			TicketsResponse.class
 		).block();
+
+		if (ticketsResponse == null) {
+			_log.error("Unable to get tickets response.");
+
+			return;
+		}
 
 		if (_log.isInfoEnabled()) {
 			_log.info("Amount of tickets: " + ticketsResponse.items.length);
