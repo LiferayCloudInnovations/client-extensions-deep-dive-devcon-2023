@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Scan') {
             environment {
-                GITHUB_CREDS = credentials('jenkins-github-credentials')
+                GITHUB_CREDS = credentials('github')
                 DEFAULT_BRANCH = "main"
             }
             steps {
